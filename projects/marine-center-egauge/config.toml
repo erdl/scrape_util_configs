@@ -36,14 +36,14 @@ in-order = ["modify","generate"] # default: ["modify","generate"]
 
 [reshape.field.modify]
 name = { title = "purpose_id", index = 1 }
-unit = { title = "units", index = 2 }
-value = { title = "reading", index = 3 }
+unit = { title = "units", index = 3 }
+value = { title = "reading", index = 2 }
 timestamp = { title = "datetime", index = 0 }
 
 [[reshape.field.generate]]
 value = "current-time"
 title = "upload_timestamp"
-index = "append" # default: "append"
+index = 3 # default: "append"
 round = 2 # default: 6
 
 
