@@ -1,2 +1,5 @@
-# csbcd-config-su
-Collection of config files for the `scrape-util` project, to be used by CSBCD for sensor scraping/monitoring.
+# csbcd-configs
+
+A collection of configuration files to be used for CSBCD related
+projects.
+
