@@ -1,9 +1,9 @@
 [acquire.static.settings]
 is-active = true
-source = '/usr/local/smb-share/hobo-12-raw/inputs/'
-on-fmt = '/usr/local/smb-share/hobo-12-raw/archive/'
-on-err = '/usr/local/smb-share/hobo-12-raw/errors/'
-on-raw = 'tmp/outputs/hobo-u12/raw/' # default: `false`
+source = '/usr/local/scrape-util/hobo-u12/inputs/'
+on-fmt = '/usr/local/scrape-util/hobo-u12/archive/'
+on-err = '/usr/local/scrape-util/hobo-u12/errors/'
+on-raw = '/usr/local/scrape-util/hobo-u12/raws/' # default: `false`
 
 
 [[acquire.static.parser]]
@@ -41,7 +41,7 @@ round = 2 # default: 6
 # CSV EXPORT
 [export.csv.settings]
 is-active = true
-directory = '/usr/local/smb-share/hobo-12-raw/outputs/'
+directory = '/usr/local/scrape-util/hobo-u12/outputs/'
 file-spec = { tag = 'u12-data', timestamp = true }
 
 # PSQL EXPORT
