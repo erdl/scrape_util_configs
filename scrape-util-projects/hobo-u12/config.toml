@@ -1,9 +1,9 @@
 [acquire.static.settings]
 is-active = true
-source = '/usr/local/scrape-util/hobo-u12/inputs/'
-on-fmt = '/usr/local/scrape-util/hobo-u12/archive/'
-on-err = '/usr/local/scrape-util/hobo-u12/errors/'
-on-raw = '/usr/local/scrape-util/hobo-u12/raws/' # default: `false`
+source = '/var/local/scrape-util/hobo-u12/inputs/'
+on-fmt = '/var/local/scrape-util/hobo-u12/archive/'
+on-err = '/var/local/scrape-util/hobo-u12/errors/'
+on-raw = '/var/local/scrape-util/hobo-u12/raws/' # default: `false`
 
 
 [[acquire.static.parser]]

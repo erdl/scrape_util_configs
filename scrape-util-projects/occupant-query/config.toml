@@ -1,0 +1,25 @@
+[acquire.static.settings]
+is-active = true
+source = '/home/forrest/CSBCD/occupant-query-server/tmp/responses/'
+
+[[acquire.static.parser]]
+parser = "occupant-query"
+suffix = "csv"
+
+
+[reshape.field.modify]
+node = { title = "survey", index = 0 }
+name = { title = "question", index = 1 }
+value = { title = "option", index = 2 }
+timestamp = { title = "timestamp", index = 3 }
+
+
+[export]
+csv = true
+
+[export.psql.settings]
+is-active = false
+database = "kiosk"
+table = "responses"
+
+

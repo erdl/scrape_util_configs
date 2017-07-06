@@ -1,0 +1,112 @@
+[acquire.egauge]
+gauges = { 'e34111' = 34111 , 'e34113' = 34113, 'e34104' = 34104, 'e34105' = 34105, 'e34106' = 34106, 'e34107' = 34107, 'e34108' = 34108, 'e34109' = 34109, 'e34110' = 34110, 'e790' = 790}
+
+
+
+# VALUE RESHAPING
+[reshape.value.settings]
+is-active = true
+to-replace = "name"
+uid-key = ["node","name"]
+in-order = ["filter","replace"]
+
+[reshape.value.filter]
+usage = false
+generation = false
+
+[reshape.value.replace]
+e34111-acc = 136
+e34111-ahu = 137
+e34111-dryer = 138
+e34111-range = 141
+e34111-other = 140
+'e34111-kitchen-refridgerator' = 139
+'e34111-whole-house' = 143
+'e34111-water-heater' = 142
+
+e34113-acc = 144
+e34113-ahu = 145
+e34113-dryer = 146
+e34113-range = 149
+e34113-other = 148
+'e34113-kitchen-refridgerator' = 147
+'e34113-whole-house' = 151
+'e34113-water-heater' = 150
+
+e34104-acc = 152
+e34104-ahu = 153
+e34104-dryer = 154
+e34104-stove = 157
+e34104-other = 156
+'e34104-kitchen-refridgerator' = 155
+'e34104-whole-house' = 159
+'e34104-water-heater' = 158
+
+e34105-pv = 160
+
+e34106-acc = 161
+e34106-ahu = 162
+e34106-dryer = 163
+e34106-other = 166
+'e34106-kitchen-refridgerator' = 164
+'e34106-whole-house' = 168
+'e34106-water-heater' = 167
+'e34106-lanai-refridgerator' = 165
+
+e34107-pv = 169
+
+e34108-dishwasher = 170
+e34108-dryer = 171
+e34108-stove = 174
+e34108-other = 173
+'e34108-kitchen-refridgerator' = 172
+'e34108-whole-house' = 176
+'e34108-water-heater' = 175
+
+e34109-pv = 177
+
+e34110-solar-ac = 178
+
+e790-acc = 179
+e790-ahu = 180
+e790-dryer = 181
+e790-stove = 184
+e790-other = 183
+'e790-kitchen-refridgerator' = 182
+'e790-whole-house' = 186
+'e790-water-heater' = 185
+
+
+# FIELD RESHAPING
+[reshape.field.settings]
+is-active = true
+on-modify = "discard" # "discard" || "archive"
+in-order = ["modify","generate"] # default: ["modify","generate"]
+
+[reshape.field.modify]
+name = { title = "purpose_id", index = 0 }
+unit = { title = "units", index = 4 }
+value = { title = "value", index = 3 }
+timestamp = { title = "reading_timestamp", index = 1 }
+
+[[reshape.field.generate]]
+value = "current-time"
+title = "upload_timestamp"
+index = 2 # default: "append"
+round = 2 # default: 6
+
+
+
+[export]
+csv = true
+
+[export.psql.settings]
+is-active = true
+database = 'dhhl'
+table = 'reading'
+unique-key = ['purpose_id','reading_timestamp']
+
+[export.psql.conversions]
+reading_timestamp = 'to-timestamp'
+upload_timestamp = 'to-timestamp'
+
