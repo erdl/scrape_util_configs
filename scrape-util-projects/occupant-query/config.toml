@@ -1,6 +1,6 @@
 [acquire.static.settings]
 is-active = true
-source = '/home/forrest/CSBCD/occupant-query-server/tmp/responses/'
+source = '/var/www/www-data/occquse/responses/'
 
 [[acquire.static.parser]]
 parser = "occupant-query"
@@ -20,8 +20,7 @@ timestamp = { title = "timestamp", index = 4 }
 csv = true
 
 [export.psql.settings]
-is-active = false
+is-active = true
 database = "kiosk"
-table = "responses"
-
+table = "response"
 
