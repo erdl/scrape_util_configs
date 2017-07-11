@@ -15,7 +15,6 @@ unit = { title = "question", index = 1 }
 value = { title = "option", index = 3 }
 timestamp = { title = "timestamp", index = 4 }
 
-
 [export]
 csv = true
 
@@ -23,4 +22,9 @@ csv = true
 is-active = true
 database = "kiosk"
 table = "response"
+
+
+[export.psql.conversions]
+psql-defaults = [0]
+timestamp = "to-timestamp"
 
