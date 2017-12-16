@@ -1,5 +1,5 @@
 [acquire.egauge]
-gauges = { 'e34111' = 34111 , 'e34113' = 34113, 'e34104' = 34104, 'e34105' = 34105, 'e34106' = 34106, 'e34107' = 34107, 'e34108' = 34108, 'e34109' = 34109, 'e34110' = 34110, 'e790' = 790}
+gauges = { 'e34111' = 34111 , 'e34113' = 34113, 'e34104' = 34104, 'e34105' = 34105, 'e34106' = 34106, 'e34107' = 34107, 'e34108' = 34108, 'e34109' = 34109, 'e34110' = 34110, 'e790' = 790, 'e785' = 785, 'e786' = 786, 'e795' = 795, 'e792' = 792 }
 
 
 
@@ -38,7 +38,7 @@ e34104-ahu = 153
 e34104-dryer = 154
 e34104-stove = 157
 e34104-other = 156
-'e34104-kitchen-refridgerator' = 155
+'e34104-kitchen-refrigerator' = 155
 'e34104-whole-house' = 159
 'e34104-water-heater' = 158
 
@@ -48,10 +48,10 @@ e34106-acc = 161
 e34106-ahu = 162
 e34106-dryer = 163
 e34106-other = 166
-'e34106-kitchen-refridgerator' = 164
+'e34106-kitchen-refrigerator' = 164
 'e34106-whole-house' = 168
 'e34106-water-heater' = 167
-'e34106-lanai-refridgerator' = 165
+'e34106-lanai-refrigerator' = 165
 
 e34107-pv = 169
 
@@ -59,7 +59,7 @@ e34108-dishwasher = 170
 e34108-dryer = 171
 e34108-stove = 174
 e34108-other = 173
-'e34108-kitchen-refridgerator' = 172
+'e34108-kitchen-refrigerator' = 172
 'e34108-whole-house' = 176
 'e34108-water-heater' = 175
 
@@ -72,9 +72,35 @@ e790-ahu = 180
 e790-dryer = 181
 e790-stove = 184
 e790-other = 183
-'e790-kitchen-refridgerator' = 182
+'e790-kitchen-refrigerator' = 182
 'e790-whole-house' = 186
 'e790-water-heater' = 185
+
+'e785-Whole-house' = 187
+'e785-Water-heater' = 188
+e785-ACC = 189
+e785-AHU = 190
+e785-Dryer = 191
+e785-Range = 192
+'e785-Kitchen-refrigerator' = 193
+e785-Other = 194
+
+e786-PV	= 195
+
+'e795-Whole-house' = 196
+'e795-Water-heater' = 197
+e795-ACC = 198
+e795-AHU = 199
+e795-Dryer = 200
+e795-Range = 201
+'e795-Kitchen-refrigerator' = 202
+e795-Other = 203
+
+e792-PV	= 204
+
+
+
+
 
 
 # FIELD RESHAPING
