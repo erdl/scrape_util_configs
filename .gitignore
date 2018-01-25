@@ -4,3 +4,6 @@
 # scrape-util state files
 state-files/
 
+# occupant-query raw files
+scrape-util-projects/occupant-query/raw
+
