@@ -1,6 +1,7 @@
 [acquire.static.settings]
 is-active = true
 source = '/var/www/www-data/occquse/responses/'
+on-raw = '/var/local/scrape-util/projects/occupant-query/raw'
 
 [[acquire.static.parser]]
 parser = "occupant-query"
