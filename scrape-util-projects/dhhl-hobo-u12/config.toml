@@ -1,0 +1,51 @@
+[acquire.static.settings]
+is-active = true
+source = '/var/local/scrape-util/dhhl-hobo-u12/inputs/'
+on-fmt = '/var/local/scrape-util/dhhl-hobo-u12/archive/'
+on-err = '/var/local/scrape-util/dhhl-hobo-u12/errors/'
+on-raw = '/var/local/scrape-util/dhhl-hobo-u12/raws/' # default: `false`
+
+
+[[acquire.static.parser]]
+parser = "hobo-u12-csv"
+suffix = "csv"
+
+[reshape]
+value-file = "value-mapping"
+
+# FIELD RESHAPING
+[reshape.field.settings]
+is-active = true
+on-modify = "discard" # "discard" || "archive"
+in-order = ["modify","generate"] # default: ["modify","generate"]
+
+[reshape.field.modify]
+name = { title = "purpose_id", index = 0 }
+unit = { title = "units", index = 4 }
+value = { title = "value", index = 3 }
+timestamp = { title = "reading_timestamp", index = 1 }
+
+[[reshape.field.generate]]
+value = "current-time"
+title = "upload_timestamp"
+index = 2 # default: "append"
+round = 2 # default: 6
+
+
+
+[export]
+csv = true
+
+[export.psql.settings]
+is-active = true
+database = 'dhhl'
+table = 'reading'
+unique-key = ['purpose_id','reading_timestamp']
+
+[export.psql.conversions]
+reading_timestamp = 'to-timestamp'
+upload_timestamp = 'to-timestamp'
+
+
+
+
