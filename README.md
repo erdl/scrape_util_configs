@@ -1,5 +1,3 @@
-# csbcd-configs
+# Scrape-util Configs
 
-A collection of configuration files to be used for CSBCD related
-projects.
-
+Configs used for projects by Scrape-utils. 
