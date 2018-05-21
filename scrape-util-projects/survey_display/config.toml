@@ -1,0 +1,31 @@
+[acquire.static.settings]
+is-active = true
+source = '/var/www/www-data/survey_display/responses/'
+on-raw = '/var/local/scrape-util/projects/survey_display/raw'
+
+[[acquire.static.parser]]
+parser = "occupant-query"
+suffix = "csv"
+
+
+# | survey_info_id | question_id | deployed_url_id | option_id | timestamp
+[reshape.field.modify]
+node = { title = "url", index = 2 }
+name = { title = "survey", index = 0 }
+unit = { title = "question", index = 1 }
+value = { title = "option", index = 3 }
+timestamp = { title = "timestamp", index = 4 }
+
+[export]
+csv = true
+
+[export.psql.settings]
+is-active = true
+database = "kiosk"
+table = "response"
+
+
+[export.psql.conversions]
+psql-defaults = [0]
+timestamp = "to-timestamp"
+
