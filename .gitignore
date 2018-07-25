@@ -4,9 +4,6 @@
 # scrape-util state files
 state-files/
 
-# occupant-query raw files
-scrape-util-projects/survey_display/raw
-
 # dhhl-hobo-u12 reference csv file
 scrape-util-projects/dhhl-hobo-u12/reference-files/dhhl-hobo-u12.csv
 
